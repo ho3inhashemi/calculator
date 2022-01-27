@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 
 class CalculatorController extends Controller
 {
-    function add($a,$b = 0) {
-        return $a+$b;
+    public function add($a,$b = 0) {
+        $c =  $a+$b;
+
+        $data = [
+            'a' => $a,
+            'b' => $b,
+            'c' => $c
+        ];
+        
+        return view('calculate',$data);
     }
 
-    function minus($a,$b = 0) {
+    public function minus($a,$b = 0) {
         return $a-$b;
     }
 }
