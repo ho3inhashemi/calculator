@@ -1,23 +1,16 @@
 <?php
 
+use App\Http\Controllers\CalculatorController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 $isDigit = '\-?[0-9]+';
 
 $constraint = ['a' => $isDigit , 'b' => $isDigit ];
 
-Route::get('/add/{a}/{b?}', function ($a,$b = 0) {
-    return $a+$b;
-})->where($constraint);
+Route::get('/add/{a}/{b?}',[CalculatorController::class, 'add'])->where($constraint);
 
-Route::get('/minus/{a}/{b?}', function ($a,$b = 0) {
-    return $a-$b;
-})->where($constraint);
+Route::get('/minus/{a}/{b?}', [CalculatorController::class, 'minus'])->where($constraint);
 
 
 
