@@ -1,4 +1,4 @@
-<form action="/add" method="POST">
+<form action="{!! route('calc.add') !!}"  method="POST">
 @csrf
 <input type="text" name="a">+
 <input type="text" name="b">
