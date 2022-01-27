@@ -7,13 +7,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+$isDigit = '[0-9]+' ;
+
+$constraint = ['a' => $isDigit , 'b' => $isDigit ];
+
 Route::get('/add/{a}/{b}', function ($a,$b) {
     return $a+$b;
-})->where(['a' => '[0-9]+', 'b' => '[0-9]+']);
+})->where($constraint);
 
 Route::get('/minus/{a}/{b}', function ($a,$b) {
     return $a-$b;
-})->where(['a' => '[0-9]+', 'b' => '[0-9]+']);
+})->where($constraint);
 
 
 
