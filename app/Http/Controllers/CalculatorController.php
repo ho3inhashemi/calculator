@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CalculatorController extends Controller
 {
-    public function add($a,$b = 0) {
+    public function add($a = 0 , $b = 0) {
 
          $data = [
             'a' => $a,
