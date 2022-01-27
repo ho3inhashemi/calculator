@@ -11,11 +11,11 @@ $isDigit = '\-?[0-9]+';
 
 $constraint = ['a' => $isDigit , 'b' => $isDigit ];
 
-Route::get('/add/{a}/{b}', function ($a,$b) {
+Route::get('/add/{a}/{b?}', function ($a,$b = 0) {
     return $a+$b;
 })->where($constraint);
 
-Route::get('/minus/{a}/{b}', function ($a,$b) {
+Route::get('/minus/{a}/{b?}', function ($a,$b = 0) {
     return $a-$b;
 })->where($constraint);
 
