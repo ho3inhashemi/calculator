@@ -26,7 +26,7 @@ class CalculatorController extends Controller
         return $this->add($a,$b);
     }
 
-    public function minus($a,$b = 0) {
+    public function minus($a = 0 , $b = 0) {
         return $a-$b;
     }
 

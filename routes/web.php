@@ -10,7 +10,7 @@ $constraint = ['a' => $isDigit , 'b' => $isDigit ];
 
 Route::get('/add/{a?}/{b?}',[CalculatorController::class, 'add'])->where($constraint);
 
-Route::get('/minus/{a}/{b?}', [CalculatorController::class, 'minus'])->where($constraint);
+Route::get('/minus/{a?}/{b?}', [CalculatorController::class, 'minus'])->where($constraint);
 
 Route::post('/add' , [CalculatorController::class, 'addAction'])
 ->name('calc.add');
