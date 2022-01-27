@@ -15,3 +15,7 @@ Route::get('/minus/{a?}/{b?}', [CalculatorController::class, 'minus'])->where($c
 Route::post('/add' , [CalculatorController::class, 'addAction'])
 ->name('calc.add');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
