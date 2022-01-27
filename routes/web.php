@@ -12,5 +12,16 @@ Route::get('/add/{a}/{b?}',[CalculatorController::class, 'add'])->where($constra
 
 Route::get('/minus/{a}/{b?}', [CalculatorController::class, 'minus'])->where($constraint);
 
-
+Route::post('/add' , function(){
+    $a = request('a');
+    $b = request('b');
+ 
+    $data = [
+        'a' => $a,
+        'b' => $b,
+        'c' => $a+$b
+    ];
+    
+    return view('calculate',$data);
+});
 
