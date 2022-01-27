@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-$isDigit = '[0-9]+' ;
+
+$isDigit = '\-?[0-9]+';
 
 $constraint = ['a' => $isDigit , 'b' => $isDigit ];
 
